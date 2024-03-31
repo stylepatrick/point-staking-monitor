@@ -58,9 +58,10 @@ def send_message_telegram(amount_coins):
 
 if __name__ == "__main__":
     print("Point Staking Monitor running ... :)")
+    crawle_staking_explorer()
 
-# schedule.every().day.at("12:00").do(crawle_staking_explorer)
-schedule.every(20).seconds.do(crawle_staking_explorer)
+schedule.every().day.at("12:00").do(crawle_staking_explorer)
+# schedule.every(20).seconds.do(crawle_staking_explorer)
 
 while True:
     schedule.run_pending()
